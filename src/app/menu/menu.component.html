@@ -5,13 +5,23 @@
     </div>
     <!--Menu Web-->
     <div [class.darkLinks]="darkMode" class="hide-web">
+        <a routerLink="/" (click)="hideMenuOverlay()">HOME</a>
+        <a href="#about" (click)="hideMenuOverlay()">ABOUT</a>
+        <a href="#portfolio" (click)="hideMenuOverlay()">PORTFOLIO</a>
+    </div>
+    <!--Menu Mobile-->
+    <div  class="hide-mobile">
+        <img (mouseenter)="changeColor = true"  *ngIf="!darkMode && !changeColor && !showOverlay" routerLink="/" src="assets/img/menu_white.png">
+        <img (mouseenter)="changeColor = true" *ngIf="darkMode && !changeColor && !showOverlay" routerLink="/" src="assets/img/menu_black.png">
+        <img *ngIf="changeColor && !showOverlay" (click)="showMenuOverlay()" (mouseleave)="changeColor = false" src="assets/img/menu_pink.png">
+        <!--Close Menu-->
+        <img (mouseenter)="changeColor = true"  *ngIf="!darkMode && !changeColor && showOverlay" routerLink="/" src="assets/img/close_white.png">
+        <img (mouseenter)="changeColor = true" *ngIf="darkMode && !changeColor && showOverlay" routerLink="/" src="assets/img/close_black.png">
+        <img *ngIf="changeColor && showOverlay" (click)="hideMenuOverlay()" (mouseleave)="changeColor = false" src="assets/img/close_pink.png">
+    </div>
+    <div *ngIf="showOverlay" [class.d-none]="!showOverlay" class="menu-overlay grey-container">
         <a routerLink="/">HOME</a>
         <a href="#about">ABOUT</a>
         <a href="#portfolio">PORTFOLIO</a>
-    </div>
-    <!--Menu Mobile-->
-    <div class="hide-mobile">
-        <img *ngIf="!darkMode" routerLink="/" src="assets/img/menu_white.png">
-        <img *ngIf="darkMode" routerLink="/" src="assets/img/menu_black.png">
     </div>
 </header>

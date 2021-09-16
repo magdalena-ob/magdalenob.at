@@ -139,7 +139,7 @@
     margin: 2px;
     padding: 8px;
     font-size: 18px;
-    z-index: 2;
+    z-index: 3;
 
     &:hover {
         background-color: #fa2759;
@@ -148,10 +148,6 @@
     }
 
 }
-
-/*.d-none {
-    display: none !important;
-}*/
 
 @media (max-width: 650px) {
     .skills {

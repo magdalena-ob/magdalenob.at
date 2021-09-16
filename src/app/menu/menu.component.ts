@@ -7,9 +7,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   @Input() darkMode = true;
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() { 
   }
 
+  changeColor = false;
+  showOverlay = false;
+  
+  showMenuOverlay() {
+    console.log('mobile menu');
+    this.showOverlay = true;
+  }
+
+  hideMenuOverlay() {
+    this.showOverlay = false;
+    console.log('hide menu');
+  }
+
+  ngOnInit() {
+    this.showOverlay = false;
+    this.changeColor = false;
+  }
+  
 }

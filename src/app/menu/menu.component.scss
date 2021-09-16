@@ -51,7 +51,27 @@
     display: none;
 }
 
-@media (max-width: 1200px) {
+.menu-overlay {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    a{
+        margin: 60px;
+    }
+    
+}
+
+.d-none {
+    display: none !important;
+}
+
+@media (max-width: 850px) {
     .hide-web {
         display: none;
     }
