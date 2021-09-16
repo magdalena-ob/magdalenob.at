@@ -1,0 +1,34 @@
+<div class="portfolio grey-container" id="portfolio">
+  <h2>My Skills</h2>
+  <div class="skills" id="skills">
+    <div *ngFor="let item of skills" class="skill-container">
+      {{item.skillName}}
+      <div class="icon-container">
+        <img src="{{item.icon}}">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="portfolio black-container">
+  <h2>My Work</h2>
+  <div class="categories">
+    <div (click)="showCategory('all')" class="secondary-btn">All</div>
+    <div (click)="showCategory('Angular')" class="secondary-btn">Angular</div>
+    <div (click)="showCategory('JavaScript')" class="secondary-btn">JavaScript</div>
+  </div>
+  <div class="work">
+    <div *ngFor="let item of filteredProjects" class="project">
+      <img (mouseenter)="item.showInfo = true" (mouseleave)="item.showInfo = false" src="{{item.img}}">
+ 
+
+    
+
+      <div *ngIf="item.showInfo" class="info-project">
+        <h3>{{item.name}}</h3>
+        <p>{{item.description}}</p>
+        <button class="btn-project">Try out</button>
+      </div>
+    </div>
+  </div>
+</div>

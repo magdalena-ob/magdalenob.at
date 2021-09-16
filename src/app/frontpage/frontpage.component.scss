@@ -1,0 +1,124 @@
+.home {
+    min-height: 100vh;
+    padding-left: 105px;
+    padding-right: 105px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 105px;
+
+    h1 {
+        margin-bottom: 54px;
+    }
+}
+
+.profile {
+    margin-top: 40px;
+
+    img {
+        object-fit: cover;
+        object-position: 0px -31px;
+        height: 312px;
+        width: 312px;
+        border-radius: 100%;
+    }
+}
+
+.arrow-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+
+    img {
+        object-fit: cover;
+        height: 48px;
+        width: 48px;
+        cursor: pointer;
+        animation: pulsing 1.5s ease-in-out infinite;
+
+        @keyframes pulsing {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .intro {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        h1{
+            font-size: 48px;
+        }
+    }
+
+    .intro-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile {
+        img {
+            width: 232px;
+            height: 232px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .intro {
+        h1 {
+            font-size: 32px;
+        }
+    }
+
+    .arrow-down {
+        bottom: 12px !important;
+    }
+
+    .home {
+        padding-bottom: 16px;
+    }
+}
+
+//für große Monitore
+@media (min-height: 800px) {
+    .arrow-down {
+        position: absolute;
+        bottom: 54px;
+        left: 105px;
+        right: 105px;
+    }   
+}
+
+@media (min-width: 1650px) {
+    .profile {
+        img {
+            height: 460px;
+            width: 460px;
+        }
+    }
+
+    .home {
+        padding-top: 105px;
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+
+    .intro {
+        h1{
+            font-size: 80px;
+        }
+    }
+}

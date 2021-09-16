@@ -1,0 +1,36 @@
+.footer {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 105px;
+    margin-right: 105px;
+    
+
+    a{
+        color: #8491A0;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+.icons {
+
+    img {
+        object-fit: cover;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-left: unset;
+        margin-right: unset;
+    }
+}
