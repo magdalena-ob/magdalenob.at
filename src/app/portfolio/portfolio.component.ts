@@ -34,28 +34,32 @@ export class PortfolioComponent implements OnInit {
       img: 'assets/img/elpolloloco.png',
       description: 'JavaScript - based jump and run game.',
       showInfo: false,
-      category: 'JavaScript'
+      category: 'JavaScript', 
+      url: 'http://magdalena-obermayr.developerakademie.com/el_pollo_loco/index.html'
     },
     {
       name: 'Pokedex', 
       img: 'assets/img/pokedex2.png',
       description: 'JavaScript - integrate API.',
       showInfo: false,
-      category: 'JavaScript'
+      category: 'JavaScript', 
+      url: 'http://magdalena-obermayr.developerakademie.com/pokedex/index.html'
     },
     {
       name: 'Projekt 3', 
       img: 'assets/img/Projekt 3.jpg',
       description: 'Text.',
       showInfo: false,
-      category: 'Angular'
+      category: 'Angular',
+      url: ''
     },
     {
       name: 'Projekt 4', 
       img: 'assets/img/Projekt 4.jpg',
       description: 'Text.',
       showInfo: false,
-      category: 'Angular'
+      category: 'Angular',
+      url: ''
     }
   ];
 
@@ -70,6 +74,7 @@ export class PortfolioComponent implements OnInit {
     }
   }
 
+ 
   constructor() { }
 
   ngOnInit(){

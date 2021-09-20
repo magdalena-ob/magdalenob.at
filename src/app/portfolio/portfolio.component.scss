@@ -106,7 +106,7 @@
 }
 
 .info-project {
-    pointer-events: none;
+    /*pointer-events: none;*/
     position: absolute;
     top: 0;
     left: 0;
@@ -119,10 +119,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 
     h3 {
         color: #fa2759;
     }
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.project:hover .info-project {
+    display: flex;
 }
 
 .btn-project {
