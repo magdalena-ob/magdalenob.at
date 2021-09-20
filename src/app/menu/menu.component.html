@@ -30,8 +30,7 @@
     <div *ngIf="showOverlay" [class.d-none]="!showOverlay" class="menu-overlay grey-container">
         <div class="header">
             <div class="logo">
-                <img *ngIf="!darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_white.png">
-                <img *ngIf="darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_black.png">
+                <img routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_white.png">
             </div>
             <div class="hide-mobile">
                 <!--Close Menu-->

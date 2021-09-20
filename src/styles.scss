@@ -55,6 +55,10 @@ p {
         color: white;
         transition: all 225ms ease-in-out;
     }
+
+    &:disabled {
+        background-color: #2dfcd885;
+    }
 }
 
 footer {

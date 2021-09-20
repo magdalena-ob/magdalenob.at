@@ -31,6 +31,9 @@
     /*outline: 1px solid #2DFCD8;*/
     /*outline-style: auto;*/  
 }
+.input:disabled {
+    border: 1.2px solid #fa2759 !important;
+}
 
 .text-container {
     height: 105px;
