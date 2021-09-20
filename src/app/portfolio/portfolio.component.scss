@@ -2,20 +2,22 @@
     padding-top: 24px;
     text-align: center;
     padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/*.skill-box {
-    background-color: white;
-    height: 40px;
-    width: 40px;
-}*/
+.skill-box {
+   min-height: 60vh;
+}
 
 .skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 210px;
-    margin-right: 210px;
+    margin-left: 105px;
+    margin-right: 105px;
+    max-width: 580px;
 }
 
 .skill-container {
@@ -27,7 +29,8 @@
     height: 112px;
     min-width: 160px;
     border-radius: 8px;
-    margin: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
     margin-top: 40px;
     margin-bottom: 24px;
     color: black;
@@ -52,6 +55,10 @@
         height: 24px;
         width: 24px;
     }
+}
+
+.work-box {
+    min-height: 100vh;
 }
 
 .categories {
@@ -89,6 +96,7 @@
     margin-right: 200px;
     padding-bottom: 54px;
     padding-top: 24px;
+    max-width: 748px;
 }
 
 .project {
@@ -157,8 +165,23 @@
     }
 }
 
+@media (max-width: 460px) {
+    .skill-container {
+        height: 86px !important;
+        min-width: 108px !important;
+        margin-left: 4px !important;
+        margin-right: 4px !important;
+    }
+}
 
-@media (max-width: 650px) {
+@media (max-width: 560px) {
+    .skill-container {
+        height: 96px;
+        min-width: 120px; 
+    }
+}
+
+@media (max-width: 800px) {
     .skills {
         margin-left: unset;
         margin-right: unset;
@@ -171,9 +194,25 @@
     .work {
         margin-left: unset;
         margin-right: unset;
+        max-width: 400px !important;
     }
 
     .portfolio {
         padding-bottom: unset;
     }
 }
+
+@media (max-width:  1170px) {
+    .work {
+        max-width: unset;
+    }
+}
+
+@media (max-height: 580px) {
+    .skill-box {
+        min-height: 100vh;
+    }
+}
+
+
+
