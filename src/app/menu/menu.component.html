@@ -10,18 +10,43 @@
         <a href="#portfolio">PORTFOLIO</a>
     </div>
     <!--Menu Mobile-->
-    <div  class="hide-mobile">
-        <img (mouseenter)="changeColor = true"  *ngIf="!darkMode && !changeColor && !showOverlay" routerLink="/" src="assets/img/menu_white.png">
-        <img (mouseenter)="changeColor = true" *ngIf="darkMode && !changeColor && !showOverlay" routerLink="/" src="assets/img/menu_black.png">
-        <img *ngIf="changeColor && !showOverlay" (click)="showMenuOverlay()" (mouseleave)="changeColor = false" src="assets/img/menu_pink.png">
-        <!--Close Menu-->
-        <img (mouseenter)="changeColor = true"  *ngIf="!darkMode && !changeColor && showOverlay" routerLink="/" src="assets/img/close_white.png">
-        <img (mouseenter)="changeColor = true" *ngIf="darkMode && !changeColor && showOverlay" routerLink="/" src="assets/img/close_black.png">
-        <img *ngIf="changeColor && showOverlay" (click)="hideMenuOverlay()" (mouseleave)="changeColor = false" src="assets/img/close_pink.png">
+    <div class="hide-mobile">
+        <img (mouseenter)="changeColor = true" *ngIf="!darkMode && !changeColor && !showOverlay" routerLink="/"
+            src="assets/img/menu_white.png">
+        <img (mouseenter)="changeColor = true" *ngIf="darkMode && !changeColor && !showOverlay" routerLink="/"
+            src="assets/img/menu_black.png">
+        <img *ngIf="changeColor && !showOverlay" (click)="showMenuOverlay()" (mouseleave)="changeColor = false"
+            src="assets/img/menu_pink.png">
+
+        <!--Close Menu
+        <img (mouseenter)="changeColor = true" *ngIf="!darkMode && !changeColor && showOverlay" routerLink="/"
+            src="assets/img/close_white.png">
+        <img (mouseenter)="changeColor = true" *ngIf="darkMode && !changeColor && showOverlay" routerLink="/"
+            src="assets/img/close_black.png">
+        <img *ngIf="changeColor && showOverlay" (click)="hideMenuOverlay()" (mouseleave)="changeColor = false"
+            src="assets/img/close_pink.png">-->
+
     </div>
     <div *ngIf="showOverlay" [class.d-none]="!showOverlay" class="menu-overlay grey-container">
-        <a routerLink="/" (click)="hideMenuOverlay()">HOME</a>
-        <a href="#about" (click)="hideMenuOverlay()">ABOUT</a>
-        <a href="#portfolio" (click)="hideMenuOverlay()">PORTFOLIO</a>
+        <div class="header">
+            <div class="logo">
+                <img *ngIf="!darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_white.png">
+                <img *ngIf="darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_black.png">
+            </div>
+            <div class="hide-mobile">
+                <!--Close Menu-->
+                <img (mouseenter)="changeColor = true" *ngIf="!darkMode && !changeColor && showOverlay" routerLink="/"
+                    src="assets/img/close_white.png">
+                <img (mouseenter)="changeColor = true" *ngIf="darkMode && !changeColor && showOverlay" routerLink="/"
+                    src="assets/img/close_black.png">
+                <img *ngIf="changeColor && showOverlay" (click)="hideMenuOverlay()" (mouseleave)="changeColor = false"
+                    src="assets/img/close_pink.png">
+            </div>
+        </div>
+        <div class="menu-mobile">
+            <a routerLink="/" (click)="hideMenuOverlay()">HOME</a>
+            <a href="#about" (click)="hideMenuOverlay()">ABOUT</a>
+            <a href="#portfolio" (click)="hideMenuOverlay()">PORTFOLIO</a>
+        </div>
     </div>
 </header>
