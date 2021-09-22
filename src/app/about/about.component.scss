@@ -27,11 +27,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     margin-left: 54px;
 
     h2 {
         margin-bottom: unset !important;
         font-weight: 500;
+    }
+
+    p {
+        padding-top: 24px;
+        line-height: 160% !important;
     }
 }
 
@@ -71,6 +77,10 @@
 .text-journey {
     display: flex;
     text-align: center;
+
+    p{
+        line-height: 160% !important;
+    }
 }
 
 @media (max-width: 1200px) {
