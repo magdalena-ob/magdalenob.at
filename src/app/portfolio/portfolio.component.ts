@@ -39,8 +39,8 @@ export class PortfolioComponent implements OnInit {
     },
     {
       name: 'Pokedex', 
-      img: 'assets/img/pokedex2.png',
-      description: 'JavaScript - integrate API.',
+      img: 'assets/img/pokedex.png',
+      description: 'JavaScript - implementing API.',
       showInfo: false,
       category: 'JavaScript', 
       url: 'http://magdalena-obermayr.developerakademie.com/pokedex/index.html'
