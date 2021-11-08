@@ -40,22 +40,22 @@ export class PortfolioComponent implements OnInit {
     {
       name: 'Pokedex', 
       img: 'assets/img/pokedex.png',
-      description: 'JavaScript - implementing API.',
+      description: 'JavaScript - with implemented API.',
       showInfo: false,
       category: 'JavaScript', 
       url: 'http://magdalena-obermayr.developerakademie.com/pokedex/index.html'
     },
     {
-      name: 'Projekt 3', 
-      img: 'assets/img/Projekt 3.jpg',
-      description: 'Text.',
+      name: 'Ring of Fire', 
+      img: 'assets/img/ringoffire2.jpg',
+      description: 'Card game - based on Angular.',
       showInfo: false,
       category: 'Angular',
       url: ''
     },
     {
       name: 'Projekt 4', 
-      img: 'assets/img/Projekt 4.jpg',
+      img: 'assets/img/Projekt 3.jpg',
       description: 'Text.',
       showInfo: false,
       category: 'Angular',

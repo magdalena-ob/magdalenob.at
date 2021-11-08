@@ -42,8 +42,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $subject = "Contact From " . $_POST['name'];
         $headers = "From:  noreply@developerakademie.com";
 
-        mail($recipient, $subject, $_POST['message'], $headers);
-        header("Location: " . $redirect); 
+        mail($recipient, $subject, 'Absender: '. $_POST['email'] . "\r\n\r\n\r\n". $_POST['message'], $headers);
+        //header("Location: " . $redirect); 
+        echo 'Mail sent successfully. Thank you ' . $_POST['name'] . ', for getting in contact with me.';
 
         break;
     default: //Reject any non POST or OPTIONS requests.
