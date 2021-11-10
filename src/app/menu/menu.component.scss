@@ -22,8 +22,18 @@
 
         &:hover {
             color: #FA2759;
+            transition: all 225ms ease-in-out;
         }
     }
+
+    @media (min-width: 1650px) {
+        padding-left: 432px;
+        padding-right: 432px;
+    }
+}
+
+.active {
+     color: #FA2759 !important;
 }
 
 .logo {
@@ -66,7 +76,6 @@
     height: 100%;
     z-index: 93;  
     overflow-y: hidden;
-    scroll-behavior: none;
 }
 
 .menu-mobile {
@@ -84,6 +93,15 @@
 
 .d-none {
     display: none !important;
+}
+
+.headerFixed {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow:  0px 0px 4px 1px #2dfcd8;
+    z-index: 2;
 }
 
 @media (max-width: 850px) {

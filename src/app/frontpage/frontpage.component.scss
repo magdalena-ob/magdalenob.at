@@ -103,22 +103,17 @@
 }
 
 @media (min-width: 1650px) {
-    .profile {
+    /*.profile {
         img {
             height: 460px;
             width: 460px;
         }
-    }
+    }*/
 
     .home {
         padding-top: 105px;
-        padding-left: 180px;
-        padding-right: 180px;
+        padding-left: 432px;
+        padding-right: 432px;
     }
 
-    .intro {
-        h1{
-            font-size: 80px;
-        }
-    }
 }

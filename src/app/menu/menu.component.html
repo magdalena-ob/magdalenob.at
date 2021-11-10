@@ -1,13 +1,13 @@
-<header class="header" [class.headerDark]="darkMode">
+<header class="header" [class.headerDark]="darkMode" [class.headerFixed]="moveHeader">
     <div class="logo">
         <img *ngIf="!darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_white.png">
         <img *ngIf="darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_black.png">
     </div>
     <!--Menu Web-->
     <div [class.darkLinks]="darkMode" class="hide-web">
-        <a routerLink="/">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#portfolio">PORTFOLIO</a>
+        <a routerLink="/" [class.active]="selectedButton === 'home'" (click)="choseButton('home')">HOME</a>
+        <a href="#about" [class.active]="selectedButton === 'about'" (click)="choseButton('about')">ABOUT</a>
+        <a href="#portfolio" [class.active]="selectedButton === 'portfolio'" (click)="choseButton('portfolio')">PORTFOLIO</a>
     </div>
     <!--Menu Mobile-->
     <div class="hide-mobile">

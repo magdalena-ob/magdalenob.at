@@ -1,28 +1,56 @@
+.bottom-section {
+    position: relative;
+    margin-left: 105px;
+    margin-right: 105px;
+
+    @media (min-width: 1650px) {
+        margin-left: 432px;
+        margin-right: 432px;
+    }
+}
+
 .footer {
     height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 105px;
-    margin-right: 105px;
-    
 
-    a{
-        color: #8491A0;
+    a {
+        color: #8491a0;
         text-decoration: none;
         font-size: 18px;
+
+        &:hover {
+            color: black;
+            transition: all 225ms ease-in-out;
+        }
     }
 }
 
 .icons {
-
     img {
         object-fit: cover;
         height: 40px;
         width: 40px;
         cursor: pointer;
     }
+    a {
+        &:hover {
+            filter: brightness(1.5);
+            transition: all 225ms ease-in-out;
+        }
+    }
+  
+}
+
+.arrow-up {
+    position: absolute;
+    top: -28px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 1200px) {

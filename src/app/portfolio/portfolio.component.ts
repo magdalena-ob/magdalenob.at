@@ -31,7 +31,7 @@ export class PortfolioComponent implements OnInit {
   projects = [
     {
       name: 'El Pollo Loco', 
-      img: 'assets/img/elpolloloco.png',
+      img: 'assets/img/elpolloloco.jpg',
       description: 'JavaScript - based jump and run game.',
       showInfo: false,
       category: 'JavaScript', 
@@ -39,7 +39,7 @@ export class PortfolioComponent implements OnInit {
     },
     {
       name: 'Pokedex', 
-      img: 'assets/img/pokedex.png',
+      img: 'assets/img/pokedex.jpg',
       description: 'JavaScript - with implemented API.',
       showInfo: false,
       category: 'JavaScript', 
@@ -64,13 +64,20 @@ export class PortfolioComponent implements OnInit {
   ];
 
   filteredProjects: any;
+  filteredName: string | undefined;
 
   //Filterfunktion 
   showCategory(categoryName: string) {
     if(categoryName == 'all') {
       this.filteredProjects = this.projects;
+      this.filteredName = 'all';
     } else{
       this.filteredProjects = this.projects.filter(p => p.category == categoryName);
+        if(categoryName == 'Angular') {
+          this.filteredName = 'angular';
+        } else {
+          this.filteredName = 'javaScript';
+        }
     }
   }
 
@@ -79,6 +86,7 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(){
     this.filteredProjects = this.projects;
+    this.filteredName = 'all';
   }
 
 }
