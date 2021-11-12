@@ -12,25 +12,23 @@ import { FadeInAnimation } from '../animations';
 
 })
 export class AboutComponent implements OnInit {
-
-  //@HostListener('scroll') onScrollHost(e: Event): void {
-  //  console.log(this.getYPosition(e));
-  //}
+  
 
   playAnimation = false; 
+ 
 
-  @HostListener('document: scroll')
+  @HostListener('window: scroll')
     scrollFunction() {
-      if (document.body.scrollTop > 2500 || document.documentElement.scrollTop) {
-        this.playAnimation = true;
-      }
+     if (window.scrollY > 2400) {
+         this.playAnimation = true;
+     }
+
+      let currentScroll = document.documentElement.scrollTop;
+      console.log('current scroll is', currentScroll);
     }
 
   constructor() { }
 
- // getYPosition(e: Event): number {
- //   return (e.target as Element).scrollTop;
- // }
 
   ngOnInit(): void {
   }

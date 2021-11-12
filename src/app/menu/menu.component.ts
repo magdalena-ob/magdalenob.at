@@ -10,9 +10,9 @@ export class MenuComponent implements OnInit {
 
   moveHeader = false;
 
-  @HostListener('document:scroll')
+  @HostListener('window:scroll')
   scrollfunction() {
-    if(document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+    if(window.scrollY > 250) {
       this.moveHeader = true;
     } else {
       this.moveHeader = false;

@@ -5,7 +5,7 @@
     </div>
     <!--Menu Web-->
     <div [class.darkLinks]="darkMode" class="hide-web">
-        <a routerLink="/" [class.active]="selectedButton === 'home'" (click)="choseButton('home')">HOME</a>
+        <a href="#home" [class.active]="selectedButton === 'home'" (click)="choseButton('home')">HOME</a>
         <a href="#about" [class.active]="selectedButton === 'about'" (click)="choseButton('about')">ABOUT</a>
         <a href="#portfolio" [class.active]="selectedButton === 'portfolio'" (click)="choseButton('portfolio')">PORTFOLIO</a>
     </div>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="menu-mobile">
-            <a routerLink="/" (click)="hideMenuOverlay()">HOME</a>
+            <a href="#home" (click)="hideMenuOverlay()">HOME</a>
             <a href="#about" (click)="hideMenuOverlay()">ABOUT</a>
             <a href="#portfolio" (click)="hideMenuOverlay()">PORTFOLIO</a>
         </div>

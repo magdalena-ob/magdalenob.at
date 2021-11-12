@@ -21,7 +21,7 @@ export const FadeInAnimation = [
             })
         ),
         transition('out => in', [
-            animate('2000ms ease-in', style({ opacity: '1'}))
+            animate('1500ms ease-in-out', style({ opacity: '1'}))
         ])
     ])
 ]; 
