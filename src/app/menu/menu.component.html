@@ -5,9 +5,9 @@
     </div>
     <!--Menu Web-->
     <div [class.darkLinks]="darkMode" class="hide-web">
-        <a href="#home" [class.active]="selectedButton === 'home'" (click)="choseButton('home')">HOME</a>
-        <a href="#about" [class.active]="selectedButton === 'about'" (click)="choseButton('about')">ABOUT</a>
-        <a href="#portfolio" [class.active]="selectedButton === 'portfolio'" (click)="choseButton('portfolio')">PORTFOLIO</a>
+        <a href="#home" [class.active]="selectedButton === 'home'" (click)="chosenButton('home')">HOME</a>
+        <a href="#about" [class.active]="selectedButton === 'about'" (click)="chosenButton('about')">ABOUT</a>
+        <a href="#portfolio" [class.active]="selectedButton === 'portfolio'" (click)="chosenButton('portfolio')">PORTFOLIO</a>
     </div>
     <!--Menu Mobile-->
     <div class="hide-mobile">

@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, HostListener } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, HostListener, Input } from '@angular/core';
 import { FadeInAnimation } from '../animations';
+import { ScrollService } from '../scroll.service';
 
 
 
@@ -12,22 +13,48 @@ import { FadeInAnimation } from '../animations';
 
 })
 export class AboutComponent implements OnInit {
-  
 
-  playAnimation = false; 
- 
+
+  playAnimation = false;
+  currentScroll: number | undefined;
+  currentContainer: string | undefined;
+
+  @Input() currentSection: any;
+
+  constructor(public scrollService: ScrollService) {
+    //this.currentContainer = this.scrollService.currentSection.value;
+
+  }
+
 
   @HostListener('window: scroll')
-    scrollFunction() {
-     if (window.scrollY > 2400) {
-         this.playAnimation = true;
-     }
+  scrollFunction() {
+    //if (window.scrollY > 2400) {
+    //    this.playAnimation = true;
+    //}
+   
+    this.currentScroll = window.scrollY;
+    console.log('current scroll is', this.currentScroll);
+    
+    this.currentContainer = this.scrollService.currentSection.value;
 
-      let currentScroll = document.documentElement.scrollTop;
-      console.log('current scroll is', currentScroll);
+    //if (this.currentScroll == 0) {
+    //  this.currentContainer = 'home';
+    //}
+
+    
+    
+
+    if (this.currentContainer == 'about') {
+      this.playAnimation = true; 
+      console.log ('playAnimation');
     }
+     
+    console.log('currentContainer ', this.currentContainer);
+    
+  }
 
-  constructor() { }
+
 
 
   ngOnInit(): void {

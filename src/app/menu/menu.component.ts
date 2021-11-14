@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit {
     console.log('hide menu');
   }
 
-  choseButton(section: string) {
+  chosenButton(section: string) {
     if (section == 'home') {
       this.selectedButton = 'home'; 
     } else if (section == 'about') {

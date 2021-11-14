@@ -9,12 +9,15 @@ import { ScrollService } from './scroll.service';
 })
 export class AppComponent {
   title = 'magdalenob';
+  //public currentPage: string | undefined;
 
   constructor(private router: Router, public scrollService: ScrollService) { 
 
     scrollService.currentSection.subscribe(
       (res) => {
         console.log("current section: ", res);
+        //this.currentPage = this.scrollService.currentSection.value;
+        //console.log("current page: ", this.currentPage);
       }
     )
   }

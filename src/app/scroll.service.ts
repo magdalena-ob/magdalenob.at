@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ScrollService {
 
-  currentSection: BehaviorSubject<string> = new BehaviorSubject('about');
+  public currentSection: BehaviorSubject<string> = new BehaviorSubject('home');
   sections: string[] = ['home', 'about', 'portfolio', 'contact']
 
   constructor() {
@@ -15,7 +15,7 @@ export class ScrollService {
     })
   }
 
-  keepTrack() {
+  public keepTrack() {
     const viewHeight = window.innerHeight;
     for (var section of this.sections) {  //loop through all sections to check which one is in view
 
