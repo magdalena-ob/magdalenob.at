@@ -10,36 +10,12 @@
         </div>
     </div>
     <div  class="story" [@slideInLeft]="playAnimation ? 'in' : 'out' ">
-        <div class="cont-journey">
+        <div *ngFor="let story of journey" class="cont-journey">
             <div class="icon-journey">
-                <img src="assets/icon/walk-line.png">
+                <img src="{{ story.icon }}">
             </div>
             <div class="text-journey">
-                <p>Ready to start a new chapter as a web developer. Maybe at your company?</p>
-            </div>
-        </div>
-        <div class="cont-journey">
-            <div class="icon-journey">
-                <img src="assets/icon/heart-line.png">
-            </div>
-            <div class="text-journey">
-                <p>I'm passioned about nature, chocolate, music, dancing and french fries.</p>
-            </div>
-        </div>
-        <div class="cont-journey">
-            <div class="icon-journey">
-                <img src="assets/icon/search-line.png">
-            </div>
-            <div class="text-journey">
-                <p>Looking for a new adventure!</p>
-            </div>
-        </div>
-        <div class="cont-journey">
-            <div class="icon-journey">
-                <img src="assets/icon/flight-takeoff-line.png">
-            </div>
-            <div class="text-journey">
-                <p>My coding journey started in October 2020.</p>
+                <p>{{ story.text }}</p>
             </div>
         </div>
     </div>

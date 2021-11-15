@@ -3,7 +3,6 @@ import { FadeInAnimation } from '../animations';
 import { ScrollService } from '../scroll.service';
 
 
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -14,6 +13,24 @@ import { ScrollService } from '../scroll.service';
 })
 export class AboutComponent implements OnInit {
 
+  journey = [
+    {
+      icon: 'assets/icon/walk-line.png',
+      text: 'Ready to start a new chapter as a web developer. Maybe at your company?'
+    },
+    {
+      icon: 'assets/icon/heart-line.png',
+      text: "I'm passioned about nature, chocolate, music, dancing and french fries."
+    },
+    {
+      icon: 'assets/icon/search-line.png',
+      text: 'Looking for a new adventure!'
+    },
+    {
+      icon: 'assets/icon/flight-takeoff-line.png',
+      text: 'My coding journey started in October 2020.'
+    }
+  ];
 
   playAnimation = false;
   currentScroll: number | undefined;
@@ -40,11 +57,9 @@ export class AboutComponent implements OnInit {
     if (this.currentContainer == 'about') {
       this.playAnimation = true; 
       console.log ('playAnimation');
-    }
-      
+    }   
   }
-
-
+  
   ngOnInit(): void {
   }
 
