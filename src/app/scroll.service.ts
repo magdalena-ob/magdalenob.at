@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ScrollService {
 
   public currentSection: BehaviorSubject<string> = new BehaviorSubject('home');
-  sections: string[] = ['home', 'about', 'portfolio', 'contact']
+  sections: string[] = ['home', 'about', 'portfolio', 'contact', 'work']
 
   constructor() {
     document.addEventListener('scroll', () => {

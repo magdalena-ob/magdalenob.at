@@ -1,5 +1,5 @@
 <div class="about-container grey-container"  id="about">
-    <div class="about">
+    <div class="about" [@fadeIn]="playAnimation ? 'in' : 'out' ">
         <div class="profile-small">
             <img src="assets/img/IMG_4251.jpg">
         </div>
@@ -9,7 +9,7 @@
                A few more things you need to know about me...</p>
         </div>
     </div>
-    <div  class="story" [@fadeIn]="playAnimation ? 'in' : 'out' ">
+    <div  class="story" [@slideInLeft]="playAnimation ? 'in' : 'out' ">
         <div class="cont-journey">
             <div class="icon-journey">
                 <img src="assets/icon/walk-line.png">

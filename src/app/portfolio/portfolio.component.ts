@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { ScrollService } from '../scroll.service';
+import { FadeInAnimation } from '../animations';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
+  styleUrls: ['./portfolio.component.scss'],
+  animations: [FadeInAnimation]
 })
 export class PortfolioComponent implements OnInit {
 
@@ -25,28 +28,37 @@ export class PortfolioComponent implements OnInit {
     },
     {
       skillName: 'Rest API', icon: 'assets/icon/icons8-rest-api-80 2.png'
-    }
+    },
+    {
+      skillName: 'Desing Thinking', icon: 'assets/icon/Group 20.png'
+    }, 
+    {
+      skillName: 'Bootstrap', icon: 'assets/icon/icons8-bootstrap-48.png'
+    }, 
+    {
+      skillName: 'Database', icon: 'assets/icon/icons8-database-52 2.png'
+    } 
   ];
 
   projects = [
     {
-      name: 'El Pollo Loco', 
+      name: 'El Pollo Loco',
       img: 'assets/img/elpolloloco.jpg',
       description: 'JavaScript - based jump and run game.',
       showInfo: false,
-      category: 'JavaScript', 
+      category: 'JavaScript',
       url: 'http://magdalena-obermayr.developerakademie.com/el_pollo_loco/index.html'
     },
     {
-      name: 'Pokedex', 
+      name: 'Pokedex',
       img: 'assets/img/pokedex.jpg',
       description: 'JavaScript - with implemented API.',
       showInfo: false,
-      category: 'JavaScript', 
+      category: 'JavaScript',
       url: 'http://magdalena-obermayr.developerakademie.com/pokedex/index.html'
     },
     {
-      name: 'Ring of Fire', 
+      name: 'Ring of Fire',
       img: 'assets/img/ringoffire2.jpg',
       description: 'Card game - based on Angular.',
       showInfo: false,
@@ -54,7 +66,7 @@ export class PortfolioComponent implements OnInit {
       url: ''
     },
     {
-      name: 'Projekt 4', 
+      name: 'Projekt 4',
       img: 'assets/img/Projekt 3.jpg',
       description: 'Text.',
       showInfo: false,
@@ -63,28 +75,49 @@ export class PortfolioComponent implements OnInit {
     }
   ];
 
+  playAnimationSkill = false;
+  playAnimationWork = false;
+  currentContainer: string | undefined;
+
+  @Input() currentSection: any;
+
+  constructor(public scrollService: ScrollService) { }
+
   filteredProjects: any;
   filteredName: string | undefined;
 
   //Filterfunktion 
   showCategory(categoryName: string) {
-    if(categoryName == 'all') {
+    if (categoryName == 'all') {
       this.filteredProjects = this.projects;
       this.filteredName = 'all';
-    } else{
+    } else {
       this.filteredProjects = this.projects.filter(p => p.category == categoryName);
-        if(categoryName == 'Angular') {
-          this.filteredName = 'angular';
-        } else {
-          this.filteredName = 'javaScript';
-        }
+      if (categoryName == 'Angular') {
+        this.filteredName = 'angular';
+      } else {
+        this.filteredName = 'javaScript';
+      }
     }
   }
 
- 
-  constructor() { }
+  //Animation
+  @HostListener('window: scroll')
+  animateOnScroll() {
+    this.currentContainer = this.scrollService.currentSection.value;
 
-  ngOnInit(){
+    if (this.currentContainer == 'portfolio') {
+      this.playAnimationSkill = true;
+      console.log('playAnimation Skills');
+    } else if (this.currentContainer == 'work') {
+      this.playAnimationWork = true;
+      console.log (' work animation');
+    }
+  }
+
+
+
+  ngOnInit() {
     this.filteredProjects = this.projects;
     this.filteredName = 'all';
   }

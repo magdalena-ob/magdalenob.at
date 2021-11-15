@@ -1,6 +1,6 @@
-<div class="portfolio grey-container skill-box" id="portfolio">
+<div  class="portfolio grey-container skill-box" id="portfolio">
   <h2>My Skills</h2>
-  <div class="skills" id="skills">
+  <div class="skills" id="skills" [@fadeIn]="playAnimationSkill ? 'in' : 'out'">
     <div *ngFor="let item of skills" class="skill-container">
       {{item.skillName}}
       <div class="icon-container">
@@ -10,14 +10,14 @@
   </div>
 </div>
 
-<div class="portfolio black-container work-box">
+<div class="portfolio black-container work-box" id="work">
   <h2>My Work</h2>
-  <div class="categories">
+  <div class="categories" [@slideInLeft]="playAnimationWork ? 'in' : 'out'" >
     <div (click)="showCategory('all')" [class.active]="filteredName === 'all'" class="secondary-btn">All</div>
     <div (click)="showCategory('Angular')" [class.active]="filteredName === 'angular'" class="secondary-btn">Angular</div>
     <div (click)="showCategory('JavaScript')" [class.active]="filteredName === 'javaScript'" class="secondary-btn">JavaScript</div>
   </div>
-  <div class="work">
+  <div class="work" [@slideUp]="playAnimationWork ? 'in' : 'out'">
     <div *ngFor="let item of filteredProjects" class="project">
       <img src="{{item.img}}">
       <!--<img (mouseenter)="item.showInfo = true" (mouseleave)="item.showInfo = false" src="{{item.img}}">-->

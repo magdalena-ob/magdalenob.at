@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, HostListener } from '@angular/core';
+import { ScrollService } from '../scroll.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,6 +10,13 @@ export class MenuComponent implements OnInit {
   @Input() darkMode = true;
 
   moveHeader = false;
+  changeColor = false;
+  showOverlay = false;
+  selectedButton: string | undefined;
+  currentContainer: string | undefined;
+
+  constructor(public scrollService: ScrollService) { 
+  }
 
   @HostListener('window:scroll')
   scrollfunction() {
@@ -17,15 +25,11 @@ export class MenuComponent implements OnInit {
     } else {
       this.moveHeader = false;
     }
-  }
 
-  constructor() { 
+    this.currentContainer = this.scrollService.currentSection.value;
+    this.selectButton();
   }
-
-  changeColor = false;
-  showOverlay = false;
-  selectedButton: string | undefined;
-  
+ 
   showMenuOverlay() {
     console.log('mobile menu');
     this.showOverlay = true;
@@ -36,12 +40,12 @@ export class MenuComponent implements OnInit {
     console.log('hide menu');
   }
 
-  chosenButton(section: string) {
-    if (section == 'home') {
-      this.selectedButton = 'home'; 
-    } else if (section == 'about') {
+  selectButton() {
+    if (this.currentContainer == 'home') {
+      this.selectedButton = 'home';
+    } else if (this.currentContainer == 'about') {
       this.selectedButton = 'about';
-    } else if (section == 'portfolio') {
+    } else if (this.currentContainer == 'portfolio' || this.currentContainer == 'work') {
       this.selectedButton = 'portfolio';
     } else {
       this.selectedButton = '';

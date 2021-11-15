@@ -1,24 +1,27 @@
 <div class="contact black-container" id="contact">
     <div>
-        <h1 class="color2">Contact me.</h1>
-        <p>Get in touch via the form below, or by emailing <a class="color2" href="mailto:obermma@gmail.com">obermma@gmail.com</a></p>
-        <form action="http://magdalena-obermayr.developerakademie.com/magdalenob/send_mail.php" method="POST">
-            <div class="form-container">
-                <label>Name</label>
-                <input class="input" type="text" name="name" required placeholder="Enter your name">
-            </div>
-            <div class="form-container">
-                <label>Email address</label>
-                <input class="input" type="text" name="email" required placeholder="Enter your Email adress">
-            </div>
-            <div class="form-container">
-                <label>Message</label>
-                <textarea class="text-container" name="message" required placeholder="Enter your message"
-                    maxlength="3000"></textarea>
-            </div>
-            <div class="form-btn-container">
-                <button type="submit" class="primary-btn send-btn">Send</button>
-            </div>
-        </form>
+        <h1 class="color2" [@slideInRight]="playAnimation ? 'in' : 'out'">Contact me.</h1>
+        <div [@slideInLeft]="playAnimation ? 'in' : 'out'">
+            <p>Get in touch via the form below, or by emailing <a class="color2"
+                    href="mailto:obermma@gmail.com">obermma@gmail.com</a></p>
+            <form action="http://magdalena-obermayr.developerakademie.com/magdalenob/send_mail.php" method="POST">
+                <div class="form-container">
+                    <label>Name</label>
+                    <input class="input" type="text" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-container">
+                    <label>Email address</label>
+                    <input class="input" type="text" name="email" required placeholder="Enter your Email adress">
+                </div>
+                <div class="form-container">
+                    <label>Message</label>
+                    <textarea class="text-container" name="message" required placeholder="Enter your message"
+                        maxlength="3000"></textarea>
+                </div>
+                <div class="form-btn-container">
+                    <button type="submit" class="primary-btn send-btn">Send</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

@@ -23,9 +23,7 @@ export class AboutComponent implements OnInit {
 
   constructor(public scrollService: ScrollService) {
     //this.currentContainer = this.scrollService.currentSection.value;
-
   }
-
 
   @HostListener('window: scroll')
   scrollFunction() {
@@ -37,24 +35,14 @@ export class AboutComponent implements OnInit {
     console.log('current scroll is', this.currentScroll);
     
     this.currentContainer = this.scrollService.currentSection.value;
-
-    //if (this.currentScroll == 0) {
-    //  this.currentContainer = 'home';
-    //}
-
-    
-    
+    console.log('currentContainer ', this.currentContainer);
 
     if (this.currentContainer == 'about') {
       this.playAnimation = true; 
       console.log ('playAnimation');
     }
-     
-    console.log('currentContainer ', this.currentContainer);
-    
+      
   }
-
-
 
 
   ngOnInit(): void {
