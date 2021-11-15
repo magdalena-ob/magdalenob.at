@@ -35,6 +35,7 @@ export class AboutComponent implements OnInit {
   playAnimation = false;
   currentScroll: number | undefined;
   currentContainer: string | undefined;
+  visible: boolean | undefined;
 
   @Input() currentSection: any;
 
@@ -56,11 +57,13 @@ export class AboutComponent implements OnInit {
 
     if (this.currentContainer == 'about') {
       this.playAnimation = true; 
+      this.visible = true;
       console.log ('playAnimation');
     }   
   }
-  
+
   ngOnInit(): void {
+    this.visible = false;
   }
 
 }
