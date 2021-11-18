@@ -26,6 +26,10 @@
     font-size: 18px;
     margin-top: 12px;
     margin-bottom: 12px; 
+
+    :disabled {
+        border: 1.2px solid #fa2759 !important;
+    }
     
 }
 
@@ -35,8 +39,16 @@
     /*outline: 1px solid #2DFCD8;*/
     /*outline-style: auto;*/  
 }
-.input:disabled {
+/*.input:disabled {
     border: 1.2px solid #fa2759 !important;
+}*/
+
+.disabled {
+    border: 1.2px solid #fa2759 !important;
+}
+
+.mat-error {
+    color: #fa2759 !important;
 }
 
 .text-container {
@@ -71,6 +83,7 @@
     width: unset !important;
     margin-top: 12px;
 }
+
 
 @media (max-width: 650px) {
     .contact {

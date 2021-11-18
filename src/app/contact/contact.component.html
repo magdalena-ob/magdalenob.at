@@ -4,22 +4,26 @@
         <div [@slideInLeft]="playAnimation ? 'in' : 'out'">
             <p>Get in touch via the form below, or by emailing <a class="color2"
                     href="mailto:obermma@gmail.com">obermma@gmail.com</a></p>
-            <form action="http://magdalena-obermayr.developerakademie.com/magdalenob/send_mail.php" method="POST">
+            <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" action="http://magdalena-obermayr.developerakademie.com/magdalenob/send_mail.php" method="POST">
                 <div class="form-container">
-                    <label>Name</label>
-                    <input class="input" type="text" name="name" required placeholder="Enter your name">
+                    <label for="name">Name</label>
+                    <input [class.disabled]="contactForm.controls['name'].hasError('minlength') && !contactForm.controls['name'].hasError('required')" class="input" id="name" type="text" name="name" required formControlName="name" placeholder="Enter your name">
+                    <mat-error *ngIf="contactForm.controls['name'].hasError('minlength') ">Please enter your Name.</mat-error>
                 </div>
                 <div class="form-container">
-                    <label>Email address</label>
-                    <input class="input" type="text" name="email" required placeholder="Enter your Email adress">
+                    <label for="email">Email address</label>
+                    <input [class.disabled]="contactForm.controls['email'].hasError('email') && !contactForm.controls['email'].hasError('required')" class="input" id="email" type="text" name="email"  required formControlName="email" placeholder="Enter your Email adress">
+                    <mat-error *ngIf="contactForm.controls['email'].hasError('email') && !contactForm.controls['email'].hasError('required') ">Please enter your Email.</mat-error>
                 </div>
                 <div class="form-container">
-                    <label>Message</label>
-                    <textarea class="text-container" name="message" required placeholder="Enter your message"
+                    <label for="message">Message</label>
+                    <textarea [class.disabled]="contactForm.controls['message'].hasError('minlength') && !contactForm.controls['message'].hasError('required')" class="text-container" id="message" type="text" name="message" required formControlName="message" placeholder="Enter your message"
                         maxlength="3000"></textarea>
+                        <mat-error *ngIf="contactForm.controls['message'].hasError('minlength')">Please enter a message.</mat-error>
                 </div>
                 <div class="form-btn-container">
-                    <button type="submit" class="primary-btn send-btn">Send</button>
+                    <!--<button type="submit" class="primary-btn send-btn">Send</button>-->
+                    <button [disabled]="!contactForm.valid"  type="submit" class="primary-btn send-btn">Send</button>  
                 </div>
             </form>
         </div>

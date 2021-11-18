@@ -62,7 +62,10 @@ p {
     }
 
     &:disabled {
-        background-color: #2dfcd885;
+        background-color: #C0FEF3;
+        border: 2px solid #C0FEF3;
+        color: white !important;
+        cursor: unset;
     }
 }
 

@@ -15,6 +15,8 @@ import { DataProtectionComponent } from './data-protection/data-protection.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
     ContactComponent,
     FrontpageComponent,
     ImprintComponent,
-    DataProtectionComponent
+    DataProtectionComponent 
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
