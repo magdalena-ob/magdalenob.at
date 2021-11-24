@@ -4,7 +4,7 @@
         <div [@slideInLeft]="playAnimation ? 'in' : 'out'">
             <p>Get in touch via the form below, or by emailing <a class="color2"
                     href="mailto:obermma@gmail.com">obermma@gmail.com</a></p>
-            <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" action="http://magdalena-obermayr.developerakademie.com/magdalenob/send_mail.php" method="POST">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" action="http://magdalena-obermayr.developerakademie.com/magdalenob/send_mail.php" method="POST">
                 <div class="form-container">
                     <label for="name">Name</label>
                     <input [class.disabled]="contactForm.controls['name'].hasError('minlength') && !contactForm.controls['name'].hasError('required')" class="input" id="name" type="text" name="name" required formControlName="name" placeholder="Enter your name">

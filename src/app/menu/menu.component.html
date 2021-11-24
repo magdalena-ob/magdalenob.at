@@ -1,7 +1,7 @@
 <header class="header" [class.headerDark]="darkMode" [class.headerFixed]="moveHeader">
     <div class="logo">
-        <img *ngIf="!darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_white.png">
-        <img *ngIf="darkMode" routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_black.png">
+        <img *ngIf="!darkMode" routerLink="/" (click)="hideMenuOverlay(); scrollToTop()" src="assets/img/logo_white.png">
+        <img *ngIf="darkMode" routerLink="/" (click)="hideMenuOverlay(); scrollToTop()" src="assets/img/logo_black.png">
     </div>
     <!--Menu Web-->
     <div [class.darkLinks]="darkMode" class="hide-web">
@@ -27,8 +27,8 @@
             src="assets/img/close_pink.png">-->
 
     </div>
-    <div *ngIf="showOverlay" [class.d-none]="!showOverlay" class="menu-overlay grey-container">
-        <div class="header">
+    <div *ngIf="showOverlay" [class.d-none]="!showOverlay" class="menu-overlay stop-scrolling">
+        <div class="header-open-menu">
             <div class="logo">
                 <img routerLink="/" (click)="hideMenuOverlay()" src="assets/img/logo_white.png">
             </div>
@@ -42,7 +42,7 @@
                     src="assets/img/close_pink.png">
             </div>
         </div>
-        <div class="menu-mobile">
+        <div class="menu-mobile  grey-container">
             <a href="#home" (click)="hideMenuOverlay()">HOME</a>
             <a href="#portfolio" (click)="hideMenuOverlay()">PORTFOLIO</a>
             <a href="#about" (click)="hideMenuOverlay()">ABOUT</a>

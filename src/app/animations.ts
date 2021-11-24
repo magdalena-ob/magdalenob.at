@@ -5,8 +5,12 @@ import {
     animate,
     transition,
     query,
-    stagger
+    stagger,
+    group,
+    keyframes,
+    animateChild,
 } from '@angular/animations';
+
 
 export const FadeInAnimation = [
     trigger('fadeIn', [
@@ -127,5 +131,5 @@ export const FadeInAnimation = [
                 }
             ),
         ])
-    ])
+    ]),
 ];

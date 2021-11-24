@@ -70,11 +70,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;*/
-    height: 100%;
+    height: 100vh;
     z-index: 93;  
+    overflow-y: hidden;
+}
+
+.header-open-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*margin-left: 105px;
+    margin-right: 105px;*/
+    padding-left: 105px;
+    padding-right: 105px;
+    height: 80px;
+    background-color: #000000;
     overflow-y: hidden;
 }
 
@@ -82,8 +93,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 105px;
     overflow-y: hidden;
+    height: 100%;
+   
 
     a{
         margin: 60px;
@@ -94,6 +106,11 @@
 .d-none {
     display: none !important;
 }
+
+/*.stop-scrolling {
+    overflow: hidden;
+    height: 100%;
+}*/
 
 .headerFixed {
     position: fixed !important;

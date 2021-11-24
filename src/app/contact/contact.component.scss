@@ -27,21 +27,11 @@
     margin-top: 12px;
     margin-bottom: 12px; 
 
-    :disabled {
-        border: 1.2px solid #fa2759 !important;
-    }
-    
+    &:focus {
+        border-radius: 3px;
+        border: 1.2px solid #2DFCD8; 
+    }   
 }
-
-.input:focus {
-    border-radius: 3px;
-    border: 1.2px solid #2DFCD8;
-    /*outline: 1px solid #2DFCD8;*/
-    /*outline-style: auto;*/  
-}
-/*.input:disabled {
-    border: 1.2px solid #fa2759 !important;
-}*/
 
 .disabled {
     border: 1.2px solid #fa2759 !important;

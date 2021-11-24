@@ -15,6 +15,8 @@ export class MenuComponent implements OnInit {
   selectedButton: string | undefined;
   currentContainer: string | undefined;
 
+  //noScroll = false;
+
   constructor(public scrollService: ScrollService) { 
   }
 
@@ -33,6 +35,7 @@ export class MenuComponent implements OnInit {
   showMenuOverlay() {
     console.log('mobile menu');
     this.showOverlay = true;
+    //this.noScroll = true;
   }
 
   hideMenuOverlay() {
@@ -57,5 +60,19 @@ export class MenuComponent implements OnInit {
     this.changeColor = false;
     this.selectedButton = 'home';
   }
+
+  scrollToTop(){
+    let currentPosition = window.scrollY;
+
+    if(currentPosition > 0) {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  //stopScrolling() {
+  //  if(this.noScroll) {
+  //    $("body").css("overflow", "hidden");
+  //  }
+  //}
   
 }

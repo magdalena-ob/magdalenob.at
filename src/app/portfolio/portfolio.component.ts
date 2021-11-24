@@ -77,6 +77,7 @@ export class PortfolioComponent implements OnInit {
 
   playAnimationSkill = false;
   playAnimationWork = false;
+  playAnimationCategory = false;
   currentContainer: string | undefined;
 
   @Input() currentSection: any;
@@ -95,11 +96,14 @@ export class PortfolioComponent implements OnInit {
       this.filteredProjects = this.projects.filter(p => p.category == categoryName);
       if (categoryName == 'Angular') {
         this.filteredName = 'angular';
+        this.playAnimationCategory = !this.playAnimationCategory;
       } else {
         this.filteredName = 'javaScript';
+        this.playAnimationCategory = !this.playAnimationCategory;
       }
     }
   }
+
 
   //Animation
   @HostListener('window: scroll')
