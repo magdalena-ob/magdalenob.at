@@ -33,6 +33,7 @@ export class AboutComponent implements OnInit {
   ];
 
   playAnimation = false;
+  playAnimationStory = false;
   currentScroll: number | undefined;
   currentContainer: string | undefined;
   visible: boolean | undefined;
@@ -57,9 +58,13 @@ export class AboutComponent implements OnInit {
 
     if (this.currentContainer == 'about') {
       this.playAnimation = true; 
+     // this.visible = true;
+      console.log ('playAnimation about');
+    } else if (this.currentContainer == 'story') {
+      this.playAnimationStory = true;
       this.visible = true;
-      console.log ('playAnimation');
-    }   
+      console.log ('playAnimation story');
+    }
   }
 
   ngOnInit(): void {

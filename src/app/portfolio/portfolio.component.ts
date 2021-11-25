@@ -1,12 +1,13 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ScrollService } from '../scroll.service';
 import { FadeInAnimation } from '../animations';
+import { zoomInAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
-  animations: [FadeInAnimation]
+  animations: [FadeInAnimation, zoomInAnimation()]
 })
 export class PortfolioComponent implements OnInit {
 
@@ -119,7 +120,10 @@ export class PortfolioComponent implements OnInit {
     }
   }
 
-
+  playCollapseAnimation(){
+    this.playAnimationCategory = true;
+    setTimeout(() => this.playAnimationCategory = false, 1000);
+  }
 
   ngOnInit() {
     this.filteredProjects = this.projects;

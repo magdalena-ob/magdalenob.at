@@ -9,7 +9,7 @@
                A few more things you need to know about me...</p>
         </div>
     </div>
-    <div  class="story" [class.visible]='!visible' [@slideInChild]="playAnimation ? 'in' : 'out'">
+    <div  class="story" [class.visible]='!visible' [@slideInChild]="playAnimationStory ? 'in' : 'out'" id="story">
         <div *ngFor="let story of journey" class="cont-journey">
             <div class="icon-journey">
                 <img src="{{ story.icon }}">
