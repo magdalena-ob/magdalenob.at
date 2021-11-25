@@ -30,7 +30,7 @@ export class PortfolioComponent implements OnInit {
       skillName: 'Rest API', icon: 'assets/icon/icons8-rest-api-80 2.png'
     },
     {
-      skillName: 'Desing Thinking', icon: 'assets/icon/Group 20.png'
+      skillName: 'Material Design', icon: 'assets/icon/icons8-design-24.png'
     }, 
     {
       skillName: 'Bootstrap', icon: 'assets/icon/icons8-bootstrap-48.png'

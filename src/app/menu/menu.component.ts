@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
   selectedButton: string | undefined;
   currentContainer: string | undefined;
 
-  //noScroll = false;
+ // noScroll = false;
 
   constructor(public scrollService: ScrollService) { 
   }
@@ -36,6 +36,7 @@ export class MenuComponent implements OnInit {
     console.log('mobile menu');
     this.showOverlay = true;
     //this.noScroll = true;
+    //this.stopScrolling();
   }
 
   hideMenuOverlay() {
@@ -71,7 +72,8 @@ export class MenuComponent implements OnInit {
 
   //stopScrolling() {
   //  if(this.noScroll) {
-  //    $("body").css("overflow", "hidden");
+  //   console.log('scrollen ausschalten');
+  //   document.body.style.overflow = 'hidden';
   //  }
   //}
   

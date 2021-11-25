@@ -39,6 +39,7 @@
         width: 48px;
         cursor: pointer;
         animation: pulsing 1.5s ease-in-out infinite;
+        animation-delay: 4s;
 
         @keyframes pulsing {
             from {
