@@ -39,10 +39,21 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case ("POST"): //Send the email;
         header("Access-Control-Allow-Origin: *");
 
-        $subject = "Contact From " . $_POST['name'];
+        
+        $json = file_get_contents('php://input');
+
+        $params = json_decode($json);
+
+        $email = $params->email;
+        $name = $params->name;
+        $message = $params->message;
+
+        //$subject = "Contact From " . $_POST['name'];
+        $subject = "Contact From $name <$email>";
         $headers = "From:  noreply@magdalena-obermayr.developerakademie.com";
 
-        mail($recipient, $subject, 'Absender: '. $_POST['email'] . "\r\n\r\n\r\n". $_POST['message'], $headers);
+        //mail($recipient, $subject, 'Absender: '. $_POST['email'] . "\r\n\r\n\r\n". $_POST['message'], $headers);
+        mail($recipient, $subject, $message, $headers);
         header("Location: " . $redirect); 
         //echo 'Mail sent successfully. Thank you ' . $_POST['name'] . ', for getting in contact with me.';
 

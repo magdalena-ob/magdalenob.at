@@ -19,7 +19,7 @@ export class ContactComponent implements OnInit {
 
   constructor(public scrollService: ScrollService, private fb: FormBuilder, private http: HttpClient) { }
 
-  endpoint = "https://magdalena-obermayr.developerakademie.com/assets/sendMail.php";
+  endpoint = "https://magdalena-obermayr.developerakademie.com/magdalenob/sendMail.php";
   //submitReport: string | undefined;
   submitContactForm = false;
   messageSuccess = false;
