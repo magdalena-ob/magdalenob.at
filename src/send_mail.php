@@ -40,11 +40,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
         header("Access-Control-Allow-Origin: *");
 
         $subject = "Contact From " . $_POST['name'];
-        $headers = "From:  noreply@developerakademie.com";
+        $headers = "From:  noreply@magdalena-obermayr.developerakademie.com";
 
         mail($recipient, $subject, 'Absender: '. $_POST['email'] . "\r\n\r\n\r\n". $_POST['message'], $headers);
-        //header("Location: " . $redirect); 
-        echo 'Mail sent successfully. Thank you ' . $_POST['name'] . ', for getting in contact with me.';
+        header("Location: " . $redirect); 
+        //echo 'Mail sent successfully. Thank you ' . $_POST['name'] . ', for getting in contact with me.';
 
         break;
     default: //Reject any non POST or OPTIONS requests.

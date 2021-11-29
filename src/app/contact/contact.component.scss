@@ -74,6 +74,39 @@
     margin-top: 12px;
 }
 
+mat-card {
+    background-color: #1A1A1A;
+    border: 1.5px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.report {
+    p {
+        color: white;
+        padding: 16px;
+        font-family: "Inter", sans-serif !important;
+    }
+}
+
+.close-button {
+    color: #2dfcd8 !important;
+    background-color: #252424 !important;
+    border-radius: 0px !important;
+    font-family: "Inter", sans-serif !important;
+}
+
+.button-position {
+    display: flex !important;
+    justify-content: flex-end !important;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}
+
 
 @media (max-width: 650px) {
     .contact {

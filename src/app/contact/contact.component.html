@@ -1,31 +1,61 @@
 <div class="contact black-container" id="contact">
     <div>
         <h1 class="color2" [@slideInRight]="playAnimation ? 'in' : 'out'">Contact me.</h1>
-        <div [@slideInLeft]="playAnimation ? 'in' : 'out'">
+        <div [@slideInLeft]="playAnimation ? 'in' : 'out'" id="MessageForm" *ngIf="!submitContactForm">
             <p>Get in touch via the form below, or by emailing <a class="color2"
                     href="mailto:obermma@gmail.com">obermma@gmail.com</a></p>
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" action="http://magdalena-obermayr.developerakademie.com/magdalenob/send_mail.php" method="POST">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="form-container">
                     <label for="name">Name</label>
-                    <input [class.disabled]="contactForm.controls['name'].hasError('minlength') && !contactForm.controls['name'].hasError('required')" class="input" id="name" type="text" name="name" required formControlName="name" placeholder="Enter your name">
-                    <mat-error *ngIf="contactForm.controls['name'].hasError('minlength') ">Please enter your Name.</mat-error>
+                    <input
+                        [class.disabled]="contactForm.controls['name'].hasError('minlength') && !contactForm.controls['name'].hasError('required')"
+                        class="input" id="name" type="text" name="name" required formControlName="name"
+                        placeholder="Enter your name">
+                    <mat-error *ngIf="contactForm.controls['name'].hasError('minlength') ">Please enter your Name.
+                    </mat-error>
                 </div>
+
                 <div class="form-container">
                     <label for="email">Email address</label>
-                    <input [class.disabled]="contactForm.controls['email'].hasError('email') && !contactForm.controls['email'].hasError('required')" class="input" id="email" type="text" name="email"  required formControlName="email" placeholder="Enter your Email adress">
-                    <mat-error *ngIf="contactForm.controls['email'].hasError('email') && !contactForm.controls['email'].hasError('required') ">Please enter your Email.</mat-error>
+                    <input
+                        [class.disabled]="contactForm.controls['email'].hasError('email') && !contactForm.controls['email'].hasError('required')"
+                        class="input" id="email" type="text" name="email" required formControlName="email"
+                        placeholder="Enter your Email adress">
+                    <mat-error
+                        *ngIf="contactForm.controls['email'].hasError('email') && !contactForm.controls['email'].hasError('required') ">
+                        Please enter your Email.</mat-error>
                 </div>
                 <div class="form-container">
                     <label for="message">Message</label>
-                    <textarea [class.disabled]="contactForm.controls['message'].hasError('minlength') && !contactForm.controls['message'].hasError('required')" class="text-container" id="message" type="text" name="message" required formControlName="message" placeholder="Enter your message"
-                        maxlength="3000"></textarea>
-                        <mat-error *ngIf="contactForm.controls['message'].hasError('minlength')">Please enter a message.</mat-error>
+                    <textarea
+                        [class.disabled]="contactForm.controls['message'].hasError('minlength') && !contactForm.controls['message'].hasError('required')"
+                        class="text-container" id="message" type="text" name="message" required
+                        formControlName="message" placeholder="Enter your message" maxlength="3000"></textarea>
+                    <mat-error *ngIf="contactForm.controls['message'].hasError('minlength')">Please enter a message.
+                    </mat-error>
                 </div>
                 <div class="form-btn-container">
-                    <!--<button type="submit" class="primary-btn send-btn">Send</button>-->
-                    <button [disabled]="!contactForm.valid"  type="submit" class="primary-btn send-btn">Send</button>  
+                    <button [disabled]="!contactForm.valid" type="submit" class="primary-btn send-btn">Send</button>
                 </div>
             </form>
         </div>
+        <!--Success/Error Message-->
+        <mat-card id="reportContactForm" [ngStyle]="{'border-color': reportColor}" *ngIf="submitContactForm">
+            <!--Success-->
+            <mat-card-content class="report" [ngStyle]="{'border-color': reportColor}" *ngIf="messageSuccess">
+                <p>Mail sent successfully! Thank you <span class="color2">{{ nameWriter }}</span> for getting in contact
+                    with me.</p>
+            </mat-card-content>
+            <mat-icon *ngIf="messageSuccess" [ngStyle]="{'color': reportColor}">sentiment_very_satisfied</mat-icon>
+            <!--Error-->
+            <mat-card-content class="report" [ngStyle]="{'border-color': reportColor}" *ngIf="messageError">
+                <p>Sorry, something went wrong while sending your message! You can contact me directly by emailing <a
+                        class="color2" href="mailto:obermma@gmail.com">obermma@gmail.com</a></p>
+            </mat-card-content>
+            <mat-icon *ngIf="messageError" [ngStyle]="{'color': reportColor}">sentiment_dissatisfied</mat-icon>
+            <mat-card-actions class="button-position">
+                <button mat-button class="close-button" (click)="closeReport()">Ok</button>
+            </mat-card-actions>
+        </mat-card>
     </div>
 </div>

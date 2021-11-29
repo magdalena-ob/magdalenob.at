@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { FadeInAnimation } from '../animations';
 import { ScrollService } from '../scroll.service';
-
 
 @Component({
   selector: 'app-contact',
@@ -17,7 +17,15 @@ export class ContactComponent implements OnInit {
 
   @Input() currentSection: any;
 
-  constructor(public scrollService: ScrollService, private fb: FormBuilder) { }
+  constructor(public scrollService: ScrollService, private fb: FormBuilder, private http: HttpClient) { }
+
+  endpoint = "https://magdalena-obermayr.developerakademie.com/assets/sendMail.php";
+  //submitReport: string | undefined;
+  submitContactForm = false;
+  messageSuccess = false;
+  messageError = false;
+  reportColor: string | undefined;
+  nameWriter: any;
 
   //Animation on scroll
   @HostListener('window: scroll')
@@ -26,32 +34,72 @@ export class ContactComponent implements OnInit {
 
     if (this.currentContainer == 'contact') {
       this.playAnimation = true;
-    } 
+    }
   }
 
-  
+
   contactForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     message: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
-  
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.contactForm.value);
+    if (this.contactForm.valid) {
+      console.log(this.contactForm.value);
+      this.nameWriter  = this.contactForm.controls['name'].value;
+      console.log('send mail');
+      this.sendMail();
+    }
+
   }
 
-  //email = new FormControl('', [Validators.required, Validators.email]);
+  sendMail() {
+    this.http.post(this.endpoint, this.contactForm.value)
+      .subscribe(
+        (success: any) => {
+          this.successMessage(success);
+        },
+        (error: any) => {
+          this.errorMessage(error);
+        }
+      )
+  }
 
-  //getErrorMessage() {
-  //  if (this.contactForm.controls['email'].hasError('required')) {
-  //    return 'You must enter an Email';
-  //  }
-  //  return this.contactForm.controls['email'].hasError('email') ? 'Not a valid email' : '';
-  //}
+  //Success Message
+  successMessage(success: any) {
+    console.log('erfolgreich versendet', success);
+    //this.submitReport = 'Mail sent successfully! Thank you for getting in contact with me.';
+    this.submitContactForm = true; 
+    this.messageSuccess = true;
+    this.reportColor = '#2dfcd8'; 
+    this.contactForm.reset();
 
+    //setTimeout(() => {
+    //  this.submitContactForm = false;
+    //},10000);
+  }
+
+  //Error Message
+  errorMessage(error: any) {
+    console.log('oho, etwas ist schief geflaufen', error);
+    //this.submitReport = 'Sorry, something went wrong while sending your message! You can contact me directly by emailing obermma@gmail.com.';
+    this.submitContactForm = true; 
+    this.messageError = true;
+    this.reportColor = '#fa2759';
+    this.contactForm.reset();
+ 
+
+    //setTimeout(() => {
+    //  this.submitContactForm = false;
+    //},10000);
+  }
+
+  closeReport() {
+    this.submitContactForm = false;
+    this.messageError = false;
+  }
 
   ngOnInit(): void {
   }
