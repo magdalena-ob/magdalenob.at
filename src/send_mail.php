@@ -3,7 +3,7 @@
 ########### CONFIG ###############
 
 $recipient = 'obermma@gmail.com';
-$redirect = 'index.html';
+//$redirect = 'index.html';
 
 ########### CONFIG END ###########
 
@@ -54,7 +54,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         //mail($recipient, $subject, 'Absender: '. $_POST['email'] . "\r\n\r\n\r\n". $_POST['message'], $headers);
         mail($recipient, $subject, $message, $headers);
-        header("Location: " . $redirect); 
+        // header("Location: " . $redirect); 
         //echo 'Mail sent successfully. Thank you ' . $_POST['name'] . ', for getting in contact with me.';
 
         break;
