@@ -47,7 +47,7 @@ export class MenuComponent implements OnInit {
   selectButton() {
     if (this.currentContainer == 'home') {
       this.selectedButton = 'home';
-    } else if (this.currentContainer == 'about') {
+    } else if (this.currentContainer == 'about' || this.currentContainer == 'story') {
       this.selectedButton = 'about';
     } else if (this.currentContainer == 'portfolio' || this.currentContainer == 'work') {
       this.selectedButton = 'portfolio';
