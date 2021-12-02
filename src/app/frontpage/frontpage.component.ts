@@ -11,17 +11,16 @@ import { bounceInDownAnimation, bounceAnimation } from 'angular-animations';
   ]
 })
 export class FrontpageComponent implements OnInit {
-  playAnimation = false; 
+  playAnimationArrow = false; 
 
-  constructor() { }
+  constructor() {}
 
-  
   ngOnInit(): void {
     setInterval(() => this.repeatAnimation(), 1500);
   }
 
   repeatAnimation(){
-    this.playAnimation = true
+    this.playAnimationArrow = true;
   }
 
 }
