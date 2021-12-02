@@ -1,7 +1,7 @@
 <div class="contact black-container" id="contact">
     <div>
         <h1 class="color2" [@slideInRight]="playAnimation ? 'in' : 'out'">Contact me.</h1>
-        <div [@slideInLeft]="playAnimation ? 'in' : 'out'" *ngIf="!submitContactForm">
+        <div [@slideInLeft]="playAnimation ? 'in' : 'out'" *ngIf="!submitContactForm" class="zoom">
             <p>Get in touch via the form below, or by emailing <a class="color2"
                     href="mailto:obermma@gmail.com">obermma@gmail.com</a></p>
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">

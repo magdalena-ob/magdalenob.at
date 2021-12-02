@@ -7,6 +7,17 @@
 
     a {
         text-decoration: none;
+
+        background: linear-gradient(to right, rgba(100, 200, 200, 0), rgba(100, 200, 200, 0)),
+            linear-gradient(to right, #2dfcd8, #5a5a5a, #fa2759);
+        background-size: 100% 0.1em, 0 0.1em;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 400ms;
+
+        &:hover {
+            background-size: 0 0.1em, 100% 0.1em;
+        }
     }
 }
 
@@ -18,19 +29,19 @@
 
 .input {
     padding: 12px;
-    background-color: #1A1A1A;
-    border: 1.2px solid #1A1A1A;
+    background-color: #1a1a1a;
+    border: 1.2px solid #1a1a1a;
     border-radius: 3px;
     outline: none;
     color: #989898;
     font-size: 18px;
     margin-top: 12px;
-    margin-bottom: 12px; 
+    margin-bottom: 12px;
 
     &:focus {
         border-radius: 3px;
-        border: 1.2px solid #2DFCD8; 
-    }   
+        border: 1.2px solid #2dfcd8;
+    }
 }
 
 .disabled {
@@ -44,20 +55,20 @@
 .text-container {
     height: 105px;
     padding: 12px;
-    background-color: #1A1A1A;
-    border: 1.2px solid #1A1A1A;
+    background-color: #1a1a1a;
+    border: 1.2px solid #1a1a1a;
     border-radius: 3px;
     outline: none;
     color: #989898;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 18px;
     margin-top: 12px;
-    margin-bottom: 12px; 
+    margin-bottom: 12px;
 }
 
 .text-container:focus {
     border-radius: 3px;
-    border: 1.2px solid #2DFCD8;
+    border: 1.2px solid #2dfcd8;
 }
 
 .form-btn-container {
@@ -75,7 +86,7 @@
 }
 
 mat-card {
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
     border: 1.5px solid;
     display: flex;
     flex-direction: column;
@@ -106,7 +117,6 @@ mat-card {
     right: 16px;
     bottom: 16px;
 }
-
 
 @media (max-width: 650px) {
     .contact {
