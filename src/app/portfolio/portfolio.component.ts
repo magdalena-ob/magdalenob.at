@@ -1,13 +1,13 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ScrollService } from '../scroll.service';
 import { FadeInAnimation } from '../animations';
-import { zoomInAnimation } from 'angular-animations';
+import { slideInUpAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
-  animations: [FadeInAnimation, zoomInAnimation()]
+  animations: [FadeInAnimation, slideInUpAnimation({duration: 300})]
 })
 export class PortfolioComponent implements OnInit {
 
@@ -64,12 +64,12 @@ export class PortfolioComponent implements OnInit {
       description: 'Card game - based on Angular.',
       showInfo: false,
       category: 'Angular',
-      url: ''
+      url: 'http://magdalena-obermayr.developerakademie.com/ringoffire/index.html'
     },
     {
-      name: 'Projekt 4',
-      img: 'assets/img/Projekt 3.jpg',
-      description: 'Text.',
+      name: 'Simple CRM',
+      img: 'assets/img/crm1.jpg',
+      description: 'CRM prototyp - based on Angular',
       showInfo: false,
       category: 'Angular',
       url: ''
@@ -97,10 +97,10 @@ export class PortfolioComponent implements OnInit {
       this.filteredProjects = this.projects.filter(p => p.category == categoryName);
       if (categoryName == 'Angular') {
         this.filteredName = 'angular';
-        this.playAnimationCategory = !this.playAnimationCategory;
+        //this.playAnimationCategory = !this.playAnimationCategory;
       } else {
         this.filteredName = 'javaScript';
-        this.playAnimationCategory = !this.playAnimationCategory;
+        //this.playAnimationCategory = !this.playAnimationCategory;
       }
     }
   }
@@ -122,7 +122,8 @@ export class PortfolioComponent implements OnInit {
 
   playCollapseAnimation(){
     this.playAnimationCategory = true;
-    setTimeout(() => this.playAnimationCategory = false, 1000);
+    setTimeout(() => this.playAnimationCategory = false, 500);
+
   }
 
   ngOnInit() {
