@@ -1,5 +1,5 @@
 <div class="home black-container" id="home">
-    <div class="intro" >
+    <div class="intro" *ngIf="playAnimationOnload" [@fadeInUpOnEnter] >
       <div class="intro-text">
         <h1>
           <b>Hi, <br>
@@ -17,7 +17,8 @@
     </div>
     <div  class="arrow-down">
       <a href="#portfolio">
-        <img [@bounceInDown]="playAnimationArrow" src="assets/img/arrow.png">
+        <!--<img [@bounceInDown]="playAnimationArrow" src="assets/img/arrow.png">-->
+        <img *ngIf="playAnimationArrow" [@bounceInDownOnEnter] src="assets/img/arrow.png">
       </a>
     </div>
   </div>
