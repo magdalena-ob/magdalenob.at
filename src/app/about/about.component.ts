@@ -16,19 +16,19 @@ export class AboutComponent implements OnInit {
   journey = [
     {
       icon: 'assets/icon/walk-line.png',
-      text: 'Ready to start a new chapter as a web developer. Maybe at your company?'
+      text: 'My coding journey started in October 2020, when I decided to follow my passion and focused on diving deep into the world of web development.'
     },
     {
       icon: 'assets/icon/heart-line.png',
-      text: "I'm passioned about nature, chocolate, music, dancing and french fries."
+      text: 'I love developing apps and it satisfies me the most when the design also looks good in the end. That’s what makes me happy, next to nature, coffee, and french fries.'
     },
     {
       icon: 'assets/icon/search-line.png',
-      text: 'Looking for a new adventure!'
+      text: 'I realized despite my big interest in natural sciences, I was longing for a job where I can express my passion for coding and be a part of exciting projects.'
     },
     {
       icon: 'assets/icon/flight-takeoff-line.png',
-      text: 'My coding journey started in October 2020.'
+      text: 'Now I am ready to take off and start my career as a software developer and deepen my programming skills.'
     }
   ];
 

@@ -69,10 +69,10 @@ export class PortfolioComponent implements OnInit {
     {
       name: 'Simple CRM',
       img: 'assets/img/crm1.jpg',
-      description: 'CRM prototyp - based on Angular',
+      description: 'CRM prototype - based on Angular',
       showInfo: false,
       category: 'Angular',
-      url: ''
+      url: 'http://magdalena-obermayr.developerakademie.com/simple-crm/index.html'
     }
   ];
 
